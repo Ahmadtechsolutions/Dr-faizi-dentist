@@ -59,20 +59,20 @@ export const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <button
               onClick={() => onOpenConsultation(service.title)}
-              className="px-6 py-3 bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-xs rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+              className="px-6 py-3 bg-neutral-950 hover:bg-neutral-800 text-white font-semibold text-xs rounded-xl transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
             >
               <Calendar className="w-4 h-4" />
-              Book Consultation for {service.title}
+              Book a Consultation
             </button>
 
             <a
               href={`https://wa.me/923333880332?text=Hello%20Dr.%20Faizi%20Clinic,%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(service.title)}.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-medium text-xs rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl transition-colors flex items-center gap-2 shadow-sm"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-600" />
-              WhatsApp Clinic Desk
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp Dr. Faizi
             </a>
           </div>
         </div>

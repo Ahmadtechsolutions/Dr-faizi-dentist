@@ -2,5 +2,7 @@
   "name": "Dr. Faizi Rhinoplasty",
   "description": "Official practice of Dr. Faizi, ENT Surgeon & Associate Professor, FCPS, FACS (USA), Rhinoplasty & FESS Expert, Member Rhinoplasty Society of Europe.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -43,7 +43,7 @@ export const BeforeAfterCard: React.FC<BeforeAfterCardProps> = ({
 
       {/* Interactive Visual Display */}
       <div 
-        className="relative h-72 sm:h-80 bg-neutral-100 overflow-hidden select-none cursor-ew-resize"
+        className="@container relative h-72 sm:h-80 bg-neutral-100 overflow-hidden select-none cursor-ew-resize"
         onMouseMove={(e) => handleSliderMove(e)}
         onTouchMove={(e) => handleSliderMove(e)}
         onMouseEnter={() => setIsInteracting(true)}
@@ -65,7 +65,7 @@ export const BeforeAfterCard: React.FC<BeforeAfterCardProps> = ({
             <img
               src={caseItem.primaryImage}
               alt={`${caseItem.title} baseline`}
-              className="absolute top-0 left-0 max-w-none h-full w-[100cqi] sm:w-full object-cover object-center filter contrast-[0.98] brightness-95"
+              className="absolute top-0 left-0 max-w-none h-full w-[100cqw] object-cover object-center filter contrast-[0.98] brightness-95"
               referrerPolicy="no-referrer"
             />
             {/* Subtle Before Tag */}

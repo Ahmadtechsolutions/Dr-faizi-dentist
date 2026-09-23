@@ -105,20 +105,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3 bg-neutral-950 hover:bg-neutral-800 text-white font-medium text-xs rounded-lg transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
+                className="px-6 py-3 bg-neutral-950 hover:bg-neutral-800 text-white font-semibold text-xs rounded-xl transition-colors flex items-center gap-2 cursor-pointer shadow-sm"
               >
                 <Calendar className="w-4 h-4" />
-                Book Consultation with Dr. Faizi
+                Book a Consultation
               </button>
 
               <a
                 href={DOCTOR_DATA.contact.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-medium text-xs rounded-lg transition-colors flex items-center gap-2"
+                className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl transition-colors flex items-center gap-2 shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                WhatsApp: {DOCTOR_DATA.contact.whatsappFormatted}
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp Dr. Faizi
               </a>
             </div>
           </div>

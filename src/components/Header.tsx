@@ -78,32 +78,53 @@ export const Header: React.FC<HeaderProps> = ({
       }`}
     >
       {/* Top micro-announcement bar for verified surgeon credentials */}
-      <div className="bg-neutral-900 text-neutral-300 text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 tracking-wide font-medium">
-            <span className="text-neutral-100">{DOCTOR_DATA.profession}</span>
-            <span className="text-neutral-500">·</span>
-            <span className="text-neutral-300">{DOCTOR_DATA.qualifications}</span>
-            <span className="hidden md:inline text-neutral-500">·</span>
-            <span className="hidden md:inline text-neutral-400">{DOCTOR_DATA.professionalMembership}</span>
-          </div>
-          <div className="flex items-center gap-4 text-neutral-300 text-xs">
-            <a 
-              href={`tel:${DOCTOR_DATA.contact.phone}`}
-              className="hover:text-white transition-colors flex items-center gap-1"
-            >
-              <Phone className="w-3 h-3 text-neutral-400" />
-              <span>{DOCTOR_DATA.contact.phoneFormatted}</span>
-            </a>
+      <div className="bg-neutral-900 text-neutral-300 text-xs py-1.5 px-3 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Mobile Clean Bar: concise credentials + direct WhatsApp link */}
+          <div className="flex sm:hidden items-center justify-between text-[11px] gap-2">
+            <div className="flex items-center gap-1.5 truncate text-neutral-300 font-medium">
+              <span className="text-white font-semibold">{DOCTOR_DATA.name}</span>
+              <span className="text-neutral-600">·</span>
+              <span className="truncate">{DOCTOR_DATA.qualifications}</span>
+            </div>
             <a 
               href={DOCTOR_DATA.contact.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1 text-emerald-400 font-medium"
+              className="shrink-0 flex items-center gap-1 text-emerald-400 font-semibold py-0.5 px-2 rounded bg-neutral-800/80 hover:bg-neutral-800 transition-colors"
             >
-              <MessageCircle className="w-3 h-3" />
-              <span className="hidden sm:inline">WhatsApp Clinic</span>
+              <MessageCircle className="w-3 h-3 text-emerald-400" />
+              <span>WhatsApp</span>
             </a>
+          </div>
+
+          {/* Tablet & Desktop Expanded Bar */}
+          <div className="hidden sm:flex items-center justify-between">
+            <div className="flex items-center gap-2 tracking-wide font-medium">
+              <span className="text-neutral-100">{DOCTOR_DATA.profession}</span>
+              <span className="text-neutral-500">·</span>
+              <span className="text-neutral-300">{DOCTOR_DATA.qualifications}</span>
+              <span className="hidden md:inline text-neutral-500">·</span>
+              <span className="hidden md:inline text-neutral-400">{DOCTOR_DATA.professionalMembership}</span>
+            </div>
+            <div className="flex items-center gap-4 text-neutral-300 text-xs">
+              <a 
+                href={`tel:${DOCTOR_DATA.contact.phone}`}
+                className="hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                <Phone className="w-3.5 h-3.5 text-neutral-400" />
+                <span>{DOCTOR_DATA.contact.phoneFormatted}</span>
+              </a>
+              <a 
+                href={DOCTOR_DATA.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors flex items-center gap-1.5 text-emerald-400 font-medium"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp: {DOCTOR_DATA.contact.whatsappFormatted}</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -50,64 +50,56 @@ export const HomePage: React.FC<HomePageProps> = ({
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              {/* Doctor Qualifications & Accreditations Line */}
-              <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-emerald-400 tracking-wider">
-                <span className="text-white font-semibold">{DOCTOR_DATA.profession}</span>
-                <span className="text-neutral-500">·</span>
-                <span className="text-neutral-200">{DOCTOR_DATA.qualifications}</span>
-                <span className="text-neutral-500">·</span>
-                <span className="text-emerald-400">{DOCTOR_DATA.professionalMembership}</span>
-              </div>
+              {/* Doctor Identity Header */}
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-widest">
+                  <span>Specialist Rhinoplasty & Facial Plastic Practice</span>
+                </div>
 
-              {/* Marquee Brand Headline */}
-              <div className="space-y-2">
-                <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.1]">
-                  Specialized Rhinoplasty & FESS Surgery
+                <h1 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.08]">
+                  {DOCTOR_DATA.name}
                 </h1>
-                <p className="text-xl sm:text-2xl text-neutral-300 font-light font-serif">
-                  {DOCTOR_DATA.brand}
-                </p>
+
+                {/* Clear Surgeon Credentials Block */}
+                <div className="space-y-1.5 pt-1">
+                  <div className="text-xl sm:text-2xl text-neutral-100 font-serif font-normal">
+                    {DOCTOR_DATA.profession}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm sm:text-base text-neutral-300 font-medium">
+                    <span className="text-white font-semibold">{DOCTOR_DATA.qualifications}</span>
+                    <span className="text-neutral-600">·</span>
+                    <span className="text-emerald-400 font-semibold">{DOCTOR_DATA.specialization}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm text-neutral-300 pt-0.5">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>{DOCTOR_DATA.professionalMembership}</span>
+                  </div>
+                </div>
               </div>
 
               {/* Short Professional Introduction */}
               <p className="text-sm sm:text-base text-neutral-300 leading-relaxed max-w-2xl font-light">
-                Providing precision aesthetic nasal contouring and restorative airway surgery. Focused on harmonious facial balance, anatomical preservation, and optimal respiratory function.
+                Providing precision aesthetic nasal contouring and restorative airway surgery. Focused on harmonious facial balance, anatomical preservation, and optimal respiratory function across primary, revision, and complex structural cases.
               </p>
 
-              {/* Trust Indicators */}
-              <div className="pt-2 border-t border-neutral-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-neutral-300">
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <span>{DOCTOR_DATA.specialization}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <span>FCPS, FACS (USA)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <span>Airway-First Approach</span>
-                </div>
-              </div>
-
-              {/* Primary Call-to-Actions */}
-              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              {/* Primary Call-to-Actions (Exact Requested Button Labels) */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <button
                   onClick={() => onOpenConsultation('Primary Rhinoplasty')}
-                  className="px-6 py-3.5 bg-white hover:bg-neutral-100 text-neutral-950 font-medium text-sm rounded-lg shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-6 py-3.5 bg-white hover:bg-neutral-100 text-neutral-950 font-semibold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
-                  <Calendar className="w-4 h-4" />
-                  Book a Consultation
+                  <Calendar className="w-4 h-4 text-neutral-900" />
+                  <span>Book a Consultation</span>
                 </button>
 
                 <a
                   href={DOCTOR_DATA.contact.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm rounded-lg transition-all flex items-center justify-center gap-2"
+                  className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 active:scale-98"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  WhatsApp Us ({DOCTOR_DATA.contact.whatsappFormatted})
+                  <span>WhatsApp Dr. Faizi</span>
                 </a>
               </div>
             </div>
@@ -181,18 +173,28 @@ export const HomePage: React.FC<HomePageProps> = ({
               Each consultation is conducted with strict confidentiality and meticulous anatomical assessment, focusing on functional airway patency and personalized aesthetic balance.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => onNavigate('/about')}
-                className="text-xs font-semibold text-neutral-950 hover:text-neutral-700 underline flex items-center gap-1 cursor-pointer"
-              >
-                Read Complete Surgeon Profile <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+            <div className="pt-3 flex flex-wrap items-center gap-3">
               <button
                 onClick={() => onOpenConsultation('Primary Rhinoplasty')}
-                className="px-4 py-2 bg-neutral-950 text-white rounded-lg text-xs font-medium hover:bg-neutral-800 transition-colors cursor-pointer"
+                className="px-4 py-2.5 bg-neutral-950 text-white rounded-xl text-xs font-semibold hover:bg-neutral-800 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
               >
-                Schedule Consultation
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Book a Consultation</span>
+              </button>
+              <a
+                href={DOCTOR_DATA.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 bg-emerald-600 text-white rounded-xl text-xs font-semibold hover:bg-emerald-700 transition-colors flex items-center gap-1.5 shadow-xs"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp Dr. Faizi</span>
+              </a>
+              <button
+                onClick={() => onNavigate('/about')}
+                className="text-xs font-semibold text-neutral-800 hover:text-neutral-950 underline underline-offset-4 flex items-center gap-1 cursor-pointer ml-auto"
+              >
+                Full Profile <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
